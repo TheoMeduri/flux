@@ -325,8 +325,8 @@ html,body{ height:100% }
 
   /* Carrossel de "Quem seguir" sem causar scroll na página */
   .fx-follow {
-    display:flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 180px 180px;
     gap:12px;
     overflow-x: auto;             /* scroll só aqui */
     overscroll-behavior-x: contain;
@@ -342,7 +342,7 @@ html,body{ height:100% }
 
   .fx-follow__item {
     flex:0 0 auto;               /* impede tentativa de ocupar 100% */
-    width:140px;                 /* largura fixa de card (ajuste à vontade) */
+    width:100%;                 /* largura fixa de card (ajuste à vontade) */
     max-width:75vw;              /* nunca maior que 75% da viewport */
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     background:var(--card);
