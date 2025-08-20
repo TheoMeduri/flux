@@ -325,8 +325,8 @@ html,body{ height:100% }
 
   /* Carrossel de "Quem seguir" sem causar scroll na página */
   .fx-follow {
-    display: grid;
-    grid-template-columns: 180px 180px;
+    display:flex;
+    flex-direction: row;
     gap:12px;
     overflow-x: auto;             /* scroll só aqui */
     overscroll-behavior-x: contain;
@@ -334,7 +334,6 @@ html,body{ height:100% }
 
     /* truque: “sangra” o carrossel até as bordas e compensa com padding,
        evitando soma de margens/paddings que estouram o container */
-    margin-inline:-16px;
     padding-inline:16px;
     scroll-snap-type:x mandatory;
   }
@@ -342,7 +341,7 @@ html,body{ height:100% }
 
   .fx-follow__item {
     flex:0 0 auto;               /* impede tentativa de ocupar 100% */
-    width:100%;                 /* largura fixa de card (ajuste à vontade) */
+    width:190px;                 /* largura fixa de card (ajuste à vontade) */
     max-width:75vw;              /* nunca maior que 75% da viewport */
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     background:var(--card);
