@@ -302,55 +302,68 @@ html,body{ height:100% }
   .fx-bottom{ display:grid; }
   .fx-main{ padding-bottom:70px; }
 }
+
+/* ===== Mobile (<=520px) ===== */
 @media (max-width: 520px){
   .fx-topbar{ grid-template-columns: 1fr; }
   .fx-userbox{ display:none; }
 
+  /* evita que o aside vaze horizontalmente */
   .fx-side {
-    display: block;
-    margin-top: -70px;
-    width: 100%;
+    display:block;
+    width:100%;
+    margin-top:-70px;
+    overflow:hidden;             /* esconde qualquer bleed lateral */
   }
 
   .fx-side__block {
     background-color: transparent;
-        border: none;
+    border: none;
     box-shadow: none;
+    padding-inline: 0;           /* remove padding lateral que pode somar >100% */
   }
 
+  /* Carrossel de "Quem seguir" sem causar scroll na página */
   .fx-follow {
-    display: flex;
+    display:flex;
     flex-direction: row;
-    gap: 10px;
-    width: 100%;
-    overflow-x: scroll;
+    gap:12px;
+    overflow-x: auto;             /* scroll só aqui */
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
 
+    /* truque: “sangra” o carrossel até as bordas e compensa com padding,
+       evitando soma de margens/paddings que estouram o container */
+    margin-inline:-16px;
+    padding-inline:16px;
+    scroll-snap-type:x mandatory;
   }
+  .fx-follow::-webkit-scrollbar{ display:none; }
 
   .fx-follow__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--card);
-    padding: 15px;
-    border-radius: 16px;
-    border: 2px solid var(--line);
-    margin-bottom: 10px;
-    width: 100%;
+    flex:0 0 auto;               /* impede tentativa de ocupar 100% */
+    width:140px;                 /* largura fixa de card (ajuste à vontade) */
+    max-width:75vw;              /* nunca maior que 75% da viewport */
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:var(--card);
+    padding:12px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    scroll-snap-align:start;
   }
 
-  .fx-follow__item .fx-avatar {
-    width: 60px;
-    border-radius: 50%;
-    height: 60px;
-    font-size: 1.2rem;
+  .fx-follow__item .fx-avatar{
+    width:60px; height:60px; border-radius:50%;
+    font-size:1.2rem; margin-bottom:6px;
   }
 
-  .fx-side__block:nth-child(2) {
-    display: none;
-  }
+  .fx-follow__item strong{ font-size:.9rem; text-align:center; }
+  .fx-follow__item .fx-handle{ font-size:.75rem; opacity:.8; }
+
+  /* Esconde blocos extras no mobile */
+  .fx-side__block:nth-child(2){ display:none; }
 }
+
 
 .verify, .verifyFollow {
   display:inline-flex; 
