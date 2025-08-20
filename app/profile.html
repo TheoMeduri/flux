@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Flux</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <header class="pf-topbar">
+    <a href="feed.html" class="pf-brand">Flux</a>
+    <button id="logoutBtn"><i class="ri-logout-box-r-line"></i></button>
+  </header>
+
+  <main class="pf-main">
+    <section class="pf-cover">
+      <div id="profileAvatar" class="pf-avatar"></div>
+      <div class="pf-info">
+        <h1 id="profileName"></h1>
+        <span id="profileHandle"></span>
+        <p id="profileBio"></p>
+        <div class="pf-actions">
+          <button id="editBtn" class="pf-btn" hidden>Editar Perfil</button>
+          <button id="followBtn" class="pf-btn" hidden>Seguir</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-stats">
+      <div><strong id="postsCount">0</strong><span>Posts</span></div>
+      <div><strong id="followersCount">0</strong><span>Seguidores</span></div>
+      <div><strong id="followingCount">0</strong><span>Seguindo</span></div>
+    </section>
+
+    <nav class="pf-tabs">
+      <button class="active" data-tab="posts">Posts</button>
+      <button data-tab="reposts">Reposts</button>
+    </nav>
+
+    <div id="tab-posts" class="pf-tab active">
+      <ul id="postsList"></ul>
+    </div>
+
+    <div id="tab-reposts" class="pf-tab">
+      <ul id="repostsList"></ul>
+    </div>
+  </main>
+
+  <script type="module" src="fluxapp.js"></script>
+</body>
+</html>

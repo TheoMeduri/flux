@@ -1,0 +1,62 @@
+:root {
+  --flux-blue:#2563FF; --flux-violet:#6D4DFF; --flux-cyan:#4AD9D9;
+  --text:#0e1330; --muted:#5f6b93; --bg:#f6f8ff; --card:#fff; --line:#e3e8ff;
+}
+
+body {
+  margin:0; font-family:Inter, sans-serif; background:var(--bg); color:var(--text);
+}
+
+.pf-topbar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 16px; background:var(--card); border-bottom:1px solid var(--line);
+}
+
+.pf-brand {font-weight:800; text-decoration:none; color:var(--flux-blue); font-size:1.2rem;}
+#logoutBtn {background:none; border:0; font-size:1.5rem; cursor:pointer; color:var(--muted);}
+
+.pf-main {max-width:700px; margin:0 auto; padding:16px;}
+
+.pf-cover {
+  display:flex; gap:16px; padding:16px; background:var(--card);
+  border:1px solid var(--line); border-radius:14px;
+}
+
+.pf-avatar {
+  width:96px; height:96px; border-radius:50%;
+  background:linear-gradient(135deg,var(--flux-blue),var(--flux-violet));
+  color:#fff; font-size:1.8rem; font-weight:700; display:grid; place-items:center;
+}
+
+.pf-info h1 {margin:0; display:flex; align-items:center; gap:6px;}
+#verifyBadge {color:var(--flux-blue); font-size:1.2rem;}
+.pf-info span {color:var(--muted);}
+#profileBio {margin:6px 0;}
+.pf-actions {margin-top:10px; display:flex; gap:10px;}
+
+.pf-btn {
+  padding:8px 16px; border-radius:20px; cursor:pointer;
+  font-weight:600; border:0; transition:.2s;
+}
+#editBtn {background:var(--muted); color:#fff;}
+#followBtn {background:linear-gradient(135deg,var(--flux-blue),var(--flux-violet)); color:#fff;}
+#followBtn[aria-pressed="true"] {background:#e0e7ff; color:var(--flux-blue);}
+
+.pf-stats {display:flex; justify-content:space-around; margin:16px 0;}
+.pf-stats div {text-align:center;}
+.pf-stats strong {display:block; font-size:1.2rem;}
+
+.pf-tabs {display:flex; border-bottom:1px solid var(--line);}
+.pf-tabs button {
+  flex:1; padding:10px; border:0; background:none; cursor:pointer;
+  font-weight:600; color:var(--muted);
+}
+.pf-tabs button.active {color:var(--flux-blue); border-bottom:3px solid var(--flux-blue);}
+
+.pf-tab {display:none; padding:16px; background:var(--card); border-radius:10px; margin-top:10px;}
+.pf-tab.active {display:block;}
+
+#postsList, #repostsList {list-style:none; padding:0; margin:0;}
+#postsList li, #repostsList li {
+  border-bottom:1px solid var(--line); padding:10px;
+}

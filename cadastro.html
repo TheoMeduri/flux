@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Flux — Cadastrar</title>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="titulo-cadastro">
+      <header class="card__header">
+        <i class="ri-flashlight-fill logo" aria-hidden="true"></i>
+        <h1 id="titulo-cadastro" class="card__title">Crie sua conta</h1>
+        <p class="card__subtitle">Bem-vindo(a) ao Flux</p>
+      </header>
+
+      <form class="form" novalidate>
+        <div class="input-group">
+          <label for="name">Nome</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            placeholder="Como devemos te chamar?"
+            required
+          />
+          <span class="input-hint" id="name-hint" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Digite seu e-mail"
+            required
+          />
+          <span class="input-hint" id="email-hint" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="pass">Senha</label>
+          <input
+            type="password"
+            id="pass"
+            name="password"
+            autocomplete="new-password"
+            placeholder="Crie uma senha (mín. 6 caracteres)"
+            minlength="6"
+            required
+            aria-describedby="pass-hint"
+          />
+          <span class="input-hint" id="pass-hint" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="pass2">Confirmar senha</label>
+          <input
+            type="password"
+            id="pass2"
+            name="password_confirm"
+            autocomplete="new-password"
+            placeholder="Repita a senha"
+            minlength="6"
+            required
+            aria-describedby="pass2-hint"
+          />
+          <span class="input-hint" id="pass2-hint" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group checkbox" style="gap:10px;">
+          <label class="checkbox" for="terms" style="display:flex;align-items:center;gap:10px;cursor:pointer;">
+            <input type="checkbox" id="terms" required />
+            <span>Concordo com os <a class="link" href="#" target="_blank" rel="noopener">Termos de Uso</a> e a <a class="link" href="#" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+          </label>
+        </div>
+
+        <button class="btn btn--primary" type="submit" id="Signup" aria-label="Cadastrar no Flux">
+          <span>Cadastrar</span>
+          <i class="ri-user-add-line" aria-hidden="true"></i>
+        </button>
+
+        <div class="division" role="separator" aria-label="ou">
+          <span>ou</span>
+        </div>
+
+        <nav class="links" aria-label="Ações adicionais">
+          <a href="./" id="to-login" class="link">Já tem uma conta? Entrar</a>
+        </nav>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <small>© <span id="ano"></span> Flux</small>
+    </footer>
+  </main>
+
+  <script>
+    // Atualiza o ano no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+
+  <script type="module" src="scriptCadastro.js"></script>
+</body>
+</html>

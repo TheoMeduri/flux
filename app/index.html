@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flux — Início</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fx-body">
+  <a class="fx-skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Topbar -->
+  <header class="fx-topbar" role="banner">
+    <div class="fx-brand">
+      <i class="ri-flashlight-fill" aria-hidden="true"></i>
+      <b>Flux</b>
+    </div>
+
+    <form class="fx-search" role="search" aria-label="Buscar no Flux" action="#" method="get">
+      <i class="ri-search-line" aria-hidden="true"></i>
+      <input id="searchInput" name="q" type="search" placeholder="Buscar no Flux…" autocomplete="off" />
+    </form>
+
+    <div class="fx-userbox" aria-label="Usuário logado">
+      <div class="fx-userbox__meta">
+        <strong id="topName">Seu Nome</strong>
+        <span id="topEmail">seuemail@exemplo.com</span>
+      </div>
+      <div id="topAvatar" class="fx-avatar" aria-hidden="true">SN</div>
+      <a id="btnExit" class="fx-btn fx-btn--ghost" href="#">
+        <i class="ri-logout-box-r-line" aria-hidden="true"></i>
+        <span>Sair</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- App -->
+  <div class="fx-app">
+    <!-- Sidebar esquerda -->
+    <aside class="fx-rail" aria-label="Navegação principal">
+      <a class="fx-rail__item is-active" href="#" aria-current="page">
+        <i class="ri-home-5-line" aria-hidden="true"></i><span>Início</span>
+      </a>
+      <a class="fx-rail__item" href="#">
+        <i class="ri-compass-3-line" aria-hidden="true"></i><span>Explorar</span>
+      </a>
+      <a class="fx-rail__item" href="#">
+        <i class="ri-message-3-line" aria-hidden="true"></i><span>Mensagens</span>
+      </a>
+      <a class="fx-rail__item" href="#">
+        <i class="ri-notification-3-line" aria-hidden="true"></i><span>Notificações</span>
+      </a>
+      <a class="fx-rail__item" href="#">
+        <i class="ri-user-3-line" aria-hidden="true"></i><span>Perfil</span>
+      </a>
+      <a class="fx-rail__item" href="#">
+        <i class="ri-settings-3-line" aria-hidden="true"></i><span>Configurações</span>
+      </a>
+    </aside>
+
+    <!-- Feed -->
+    <main id="conteudo" class="fx-main" role="main">
+      <!-- Composer -->
+      <section class="fx-composer" aria-label="Criar postagem">
+        <div class="fx-avatar">SN</div>
+        <div class="fx-composer__body">
+          <textarea class="fx-composer__input" rows="3" placeholder="O que está acontecendo?"></textarea>
+          <div class="fx-composer__actions">
+            <div class="fx-composer__tools">
+              <button class="fx-iconbtn" type="button" aria-label="Adicionar Hashtag"><i class="ri-hashtag"></i></button>
+              <button class="fx-iconbtn" type="button" aria-label="Adicionar Menção"><i class="ri-at-line"></i></button>
+              <button class="fx-iconbtn" type="button" aria-label="Adicionar emoji"><i class="ri-emotion-line"></i></button>
+            </div>
+            <button class="fx-btn fx-btn--primary" type="button">Publicar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post 1 -->
+
+
+
+      
+    </main>
+
+    <!-- Lateral direita -->
+    <aside class="fx-side" aria-label="Sugestões e tendências">
+      <section class="fx-side__block">
+        <h2 class="fx-side__title">Quem seguir</h2>
+        <ul class="fx-follow">
+          <p>Nenhum resultado</p>
+          <!-- <li class="fx-follow__item">
+            <div class="fx-avatar">LC</div>
+            <div class="fx-follow__meta">
+              <strong>Lucas Carvalho</strong>
+              <span class="fx-handle">@luccarv</span>
+            </div>
+            <a href="#" class="fx-btn fx-btn--soft">Seguir</a>
+          </li>
+          <li class="fx-follow__item">
+            <div class="fx-avatar">RF</div>
+            <div class="fx-follow__meta">
+              <strong>Rafaela Freitas</strong>
+              <span class="fx-handle">@rafa</span>
+            </div>
+            <a href="#" class="fx-btn fx-btn--soft">Seguir</a>
+          </li> -->
+        </ul>
+      </section>
+
+      <section class="fx-side__block">
+        <h2 class="fx-side__title">Tendências</h2>
+        <ul class="fx-trends">
+          <p>Nenhum resultado</p>
+          <!-- <li><a href="#">#FluxUI</a><span>12,3 mil</span></li>
+          <li><a href="#">#DevBR</a><span>8,1 mil</span></li>
+          <li><a href="#">#DesignSystem</a><span>5,7 mil</span></li> -->
+        </ul>
+      </section>
+    </aside>
+
+    
+  </div>
+
+  <!-- Bottom bar (mobile) -->
+ <!-- Bottom bar (mobile) - 5 itens com FAB central -->
+<nav class="fx-bottom fx-bottom--5" aria-label="Navegação inferior">
+  <a class="fx-bottom__item" href="#" aria-current="page">
+    <i class="ri-home-5-line" aria-hidden="true"></i><span>Início</span>
+  </a>
+
+  <a class="fx-bottom__item" href="#">
+    <i class="ri-compass-3-line" aria-hidden="true"></i><span>Explorar</span>
+  </a>
+
+  <!-- FAB central: abre o fan menu -->
+  <button id="fabToggle" class="fx-bottom__fab" aria-expanded="false" aria-controls="fanMenu" aria-label="Criar">
+    <i class="ri-add-line" aria-hidden="true"></i>
+  </button>
+
+  <a class="fx-bottom__item" href="#">
+    <i class="ri-notification-3-line" aria-hidden="true"></i><span>Notifs</span>
+  </a>
+
+  <a class="fx-bottom__item" href="#">
+    <i class="ri-user-3-line" aria-hidden="true"></i><span>Perfil</span>
+  </a>
+</nav>
+
+<!-- Fan menu (meio-círculo) que abre acima do FAB -->
+<div id="fanMenu" class="fx-fan" role="menu" hidden>
+  <button class="fx-fan__item" role="menuitem" aria-label="Post de texto">
+    <i class="ri-quill-pen-line"></i>
+  </button>
+  <button class="fx-fan__item" role="menuitem" aria-label="Foto">
+    <i class="ri-message-3-line"></i>
+  </button>
+  <button class="fx-fan__item" id="btnExit2" role="menuitem" aria-label="Enquete">
+    <i class="ri-shut-down-line"></i>
+  </button>
+  <button class="fx-fan__item" role="menuitem" aria-label="Vídeo">
+    <i class="ri-repeat-2-line"></i>
+  </button>
+  <button class="fx-fan__item" role="menuitem" aria-label="Evento">
+    <i class="ri-settings-3-line"></i>
+  </button>
+</div>
+
+
+  <script type="module" src="dads.js"></script>
+</body>
+</html>
